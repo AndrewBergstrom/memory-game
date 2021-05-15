@@ -6,3 +6,4 @@ To produce the 3D flip effect, I added the perspective property to .memory-game.
 
 To the .memory-card elements I added transform-style: preserve-3d, to position them in the 3D space created in the parent, instead of flattening it to the z = 0 plane (transform-style). A transition has to be applied to the transform property to produce the movement effect.
 
+I got the card to 3D flip but right now, both .front-face and .back-face are stacked up onto each other, because they have been assigned position: absolute. Every element has a back face, which is a mirror image of its front face. The property backface-visibility defaults to visible, so when you flip the card, we get the JS badge back face.
