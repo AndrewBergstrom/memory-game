@@ -1,1 +1,3 @@
 # memory-game
+
+To flip the card when clicked, a class 'flip' is added to the element. For that, I selected all memory-card elements with document.querySelectorAll. Then I loop through them with forEach and attach an event listener. Every time a card gets clicked 'flipCard' function is fired. The 'this' variable represents the card that was clicked. The function accesses the element's classList and toggles the 'flip' class. 
