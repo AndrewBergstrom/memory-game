@@ -6,6 +6,10 @@ let firstCard, secondCard;
 
 function flipCard() {
   if (lockBoard) return;
+  
+  // checks to see if current card is equal to first card
+  if (this === firstCard) return;
+
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
@@ -15,7 +19,6 @@ function flipCard() {
   }
   
   secondCard = this;
-  hasFlippedCard = false;
 
   checkForMatch();
 }
@@ -36,6 +39,8 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+
+  resetBoard();
 }
 
 function unflipCards() {
@@ -45,8 +50,14 @@ setTimeout(() => {
   firstCard.classList.remove('flip');
   secondCard.classList.remove('flip');
 
-  lockBoard = flase;
+  
+  resetBoard();
 }, 1500);
+}
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null]
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));

@@ -15,3 +15,5 @@ When you click the second card, I use the else block in the my condition. I chec
 Adding extra information to HTML elements, I use data attributes with the following syntax data-*, where, * can be any word. That attribute is inserted in the element's dataset property, and now I can check for a match by accessing both cards dataset. Now I can check for a match by accessing both cards dataset. 
 
 By using the ternary operators, I break down checkForMatch into 3 blocks. First block is the condition to be evaluated. The 2nd block is executed if the condition returns true. Otherwise execute block 3.
+
+The firstCard and secondCard variables need to be reset after each round, so I extract that to a new method resetBoard(). Then I place the hasFlippedCard = falsel; and lockBoard = false; there too. The es6 destructuring assignment [var1, var2] = ['value1', 'value2'], allows me to keep the code short.
