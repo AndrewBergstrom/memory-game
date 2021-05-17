@@ -1,9 +1,11 @@
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
+let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
+  if (lockBoard) return;
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
@@ -19,7 +21,7 @@ function flipCard() {
 }
 
 function checkForMatch() {
-  //This is the one way to write this condition. 
+  //This is one way to write this condition. 
   // if (firstCard.dataset.framework === secondCard.dataset.framework) {
   //   disableCards();
   //   return;
@@ -37,9 +39,13 @@ function disableCards() {
 }
 
 function unflipCards() {
+  lockBoard = true;
+
 setTimeout(() => {
   firstCard.classList.remove('flip');
   secondCard.classList.remove('flip');
+
+  lockBoard = flase;
 }, 1500);
 }
 
