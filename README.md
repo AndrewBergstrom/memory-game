@@ -9,3 +9,7 @@ To the .memory-card elements I added transform-style: preserve-3d, to position t
 I got the card to 3D flip but right now, both .front-face and .back-face are stacked up onto each other, because they have been assigned position: absolute. Every element has a back face, which is a mirror image of its front face. The property backface-visibility defaults to visible, so when you flip the card, we get the JS badge back face.
 
 Match Card: When you click the first card, it waits until another is flipped. The variables hasFlippedCard and flippedCard manage the flip state. If there is no card flipped, hasFlippedCard is set to true and flippedCard is set to the clicked card. 
+
+When you click the second card, I use the else block in the my condition. I check to see if it's a match. 
+
+Adding extra information to HTML elements, I use data attributes with the following syntax data-*, where, * can be any word. That attribute is inserted in the element's dataset property, and now I can check for a match by accessing both cards dataset. Now I can check for a match by accessing both crds dataset. 
