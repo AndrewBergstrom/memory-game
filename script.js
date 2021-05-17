@@ -6,7 +6,7 @@ let firstCard, secondCard;
 
 function flipCard() {
   if (lockBoard) return;
-  
+
   // checks to see if current card is equal to first card
   if (this === firstCard) return;
 
@@ -58,6 +58,13 @@ setTimeout(() => {
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null]
+}
+
+function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.getElementsByClassName.order = randomPos;
+  });
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
