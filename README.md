@@ -12,4 +12,6 @@ Match Card: When you click the first card, it waits until another is flipped. Th
 
 When you click the second card, I use the else block in the my condition. I check to see if it's a match. 
 
-Adding extra information to HTML elements, I use data attributes with the following syntax data-*, where, * can be any word. That attribute is inserted in the element's dataset property, and now I can check for a match by accessing both cards dataset. Now I can check for a match by accessing both crds dataset. 
+Adding extra information to HTML elements, I use data attributes with the following syntax data-*, where, * can be any word. That attribute is inserted in the element's dataset property, and now I can check for a match by accessing both cards dataset. Now I can check for a match by accessing both cards dataset. 
+
+By using the ternary operators, I break down checkForMatch into 3 blocks. First block is the condition to be evaluated. The 2nd block is executed if the condition returns true. Otherwise execute block 3.

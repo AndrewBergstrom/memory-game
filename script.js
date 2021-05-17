@@ -19,11 +19,16 @@ function flipCard() {
 }
 
 function checkForMatch() {
-  if (firstCard.dataset.framework === secondCard.dataset.framework) {
-    disableCards();
-    return;
-  }
-  unflipCards();
+  //This is the one way to write this condition. 
+  // if (firstCard.dataset.framework === secondCard.dataset.framework) {
+  //   disableCards();
+  //   return;
+  // }
+  // unflipCards();
+
+  // A cleaner way to write this, is as follows:
+  let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+  isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
