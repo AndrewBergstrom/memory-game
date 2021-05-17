@@ -6,7 +6,6 @@ let firstCard, secondCard;
 
 function flipCard() {
   if (lockBoard) return;
-
   // checks to see if current card is equal to first card
   if (this === firstCard) return;
 
@@ -19,21 +18,22 @@ function flipCard() {
   }
   
   secondCard = this;
+  lockBoard = true;
 
   checkForMatch();
 }
 
 function checkForMatch() {
-  //This is one way to write this condition. 
+    // A cleaner way to write this, is as follows:
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  isMatch ? disableCards() : unflipCards();
+
+  //  //This is one way to write this condition. 
   // if (firstCard.dataset.framework === secondCard.dataset.framework) {
   //   disableCards();
   //   return;
   // }
   // unflipCards();
-
-  // A cleaner way to write this, is as follows:
-  let isMatch = firstCard.dataset.name === secondCard.dataset.name;
-  isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
@@ -44,13 +44,11 @@ function disableCards() {
 }
 
 function unflipCards() {
-  lockBoard = true;
 
 setTimeout(() => {
   firstCard.classList.remove('flip');
   secondCard.classList.remove('flip');
 
-  
   resetBoard();
 }, 1500);
 }
@@ -63,7 +61,7 @@ function resetBoard() {
 (function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
-    card.getElementsByClassName.order = randomPos;
+    card.style.order = randomPos;
   });
 })();
 
