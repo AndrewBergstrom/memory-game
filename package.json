@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AndrewBergstrom/memory-game/issues"
   },
-  "homepage": "https://github.com/AndrewBergstrom/memory-game#readme"
+  "homepage": "https://github.com/AndrewBergstrom/memory-game#readme",
+  "dependencies": {
+    "node": "^16.1.0"
+  }
 }
