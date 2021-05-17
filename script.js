@@ -5,10 +5,30 @@ let firstCard, secondCard;
 
 function flipCard() {
   this.classList.add('flip');
+
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
+    return;
   }
+  
+  secondCard = this;
+  hasFlippedCard = false;
+
+  checkForMatch();
+}
+
+function checkForMatch() {
+  if (firstCard.dataset.framework === secondCard.dataset.framework) {
+    disableCards();
+    return;
+  }
+  unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
